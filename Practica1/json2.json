@@ -1,0 +1,28 @@
+{
+  "people": [
+    {
+      "nombre": "Juan",
+      "apellido": "Rojas",
+      "edad": 20,
+      "estado": "soltero"
+    },
+    {
+      "nombre": "Pablo",
+      "apellido": "Chinchilla",
+      "edad": 18,
+      "estado": "soltero"
+    },
+    {
+      "nombre": "Jose",
+      "apellido": "Perez",
+      "edad": 40,
+      "estado": "casado"
+    },
+    {
+      "nombre": "Maria",
+      "apellido": "Lopez",
+      "edad": 32,
+      "estado": "casada"
+    }
+  ]
+}
