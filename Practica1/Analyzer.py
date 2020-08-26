@@ -1,3 +1,6 @@
+from Practica1.loader import Loader
+
+
 class Analyzer:
     todos_comandos = []
     comando_original = ''
@@ -32,21 +35,27 @@ class Analyzer:
                 self.todos_comandos.append(comando[contador + 1:(comando.find(' '))])
         return comando_original
 
-    def selector_first_word(operation):
-        if operation == 'CARGAR':
-            print('usted cargara archivos json')
-        if operation == 'SELECCIONAR':
+    def selector_first_word(self, operation):
+        if operation == 'cargar':
+            print('usted cargara el/los siguiente(s) archivo(s) json ' + str(self.todos_comandos[1:]))
+            loader = Loader(self.todos_comandos[1:])
+            loader.plus_dot_json()
+            loader.load_file()
+            loader.print_file()
+        elif operation == 'seleccionar':
             print('usted seleccionara un atributo de su archivo')
-        if operation == 'MAXIMO':
+        elif operation == 'maximo':
             print('usted obtendra el maximo de un atributo')
-        if operation == 'MINIMO':
+        elif operation == 'minimo':
             print('usted obtendra el minimo de un atributo')
-        if operation == 'SUMA':
+        elif operation == 'suma':
             print('usted sumara todos los valores de dicho atributo')
-        if operation == 'CUENTA':
+        elif operation == 'cuemta':
             print('mostrara cuantos registros hay')
-        if operation == 'REPORTAR':
+        elif operation == 'reportar':
             print('aqui creara un reporte html')
+        else:
+            print('no escogio ningun comando')
 
     def control(self):
         print('los numeros anteriormente mostrados son los espacios en los que hay un espacio en el codigo original')
