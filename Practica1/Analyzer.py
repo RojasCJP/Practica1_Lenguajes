@@ -5,6 +5,8 @@ class Analyzer:
     todos_comandos = []
     comando_original = ''
 
+    # constructor para analizador de comandos
+
     def __init__(self, todos_comandos, comando_original):
         self.todos_comandos = todos_comandos
         self.comando_original = comando_original
@@ -13,8 +15,8 @@ class Analyzer:
     # este metodo separa las palabras para que luego puedan utilizarse de manera aislada
     # guarda el comando original
     # cada palabra la mete en una matriz
-    # y para obtener el lugar de cada palabra utilizamos un contador
-    # las condiciones utilizadas son para poder guardar el ultimo digito si en caso no existieran espacios en la palabra
+    # y para obtener el lugar de cada palabra utilizamos un contador este se utiliza unicamente para imprimir
+    # las condiciones utilizadas son para poder guardar el ultimo digito
 
     def separator(self):
         print('ingrese el comando respectivo')
@@ -34,6 +36,8 @@ class Analyzer:
             else:
                 self.todos_comandos.append(comando[contador + 1:(comando.find(' '))])
         return comando_original
+
+    # este metodo selecciona la primera palabra y con forme a eso esto hara cierta accion
 
     def selector_first_word(self, operation):
         if operation == 'cargar':
@@ -56,6 +60,8 @@ class Analyzer:
             print('aqui creara un reporte html')
         else:
             print('no escogio ningun comando')
+
+    # este metodo muestra todos los datos oportunos, como la matris de comandos y los comandos separados, ademas del mensaje original pero como queda al final
 
     def control(self):
         print('los numeros anteriormente mostrados son los espacios en los que hay un espacio en el codigo original')
