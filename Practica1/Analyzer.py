@@ -54,7 +54,7 @@ class Analyzer:
             print('usted obtendra el minimo de un atributo')
         elif operation == 'suma':
             print('usted sumara todos los valores de dicho atributo')
-        elif operation == 'cuemta':
+        elif operation == 'cuenta':
             print('mostrara cuantos registros hay')
         elif operation == 'reportar':
             print('aqui creara un reporte html')
