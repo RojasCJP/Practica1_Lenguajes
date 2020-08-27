@@ -1,10 +1,10 @@
 from Practica1.loader import Loader
-
+import re
 
 class Analyzer:
     todos_comandos = []
     comando_original = ''
-
+    loader = Loader(todos_comandos[1:])
     # constructor para analizador de comandos
 
     def __init__(self, todos_comandos, comando_original):
@@ -21,6 +21,7 @@ class Analyzer:
     def separator(self):
         print('ingrese el comando respectivo')
         comando = input()
+        comando = re.sub(",", "", comando)
         comando_original = comando
         if comando.find(' ') == -1:
             self.todos_comandos.append(comando[0:len(comando)])
@@ -42,12 +43,13 @@ class Analyzer:
     def selector_first_word(self, operation):
         if operation == 'cargar':
             print('usted cargara el/los siguiente(s) archivo(s) json ' + str(self.todos_comandos[1:]))
-            loader = Loader(self.todos_comandos[1:])
-            loader.plus_dot_json()
-            loader.load_file()
-            loader.print_file()
+            self.loader = Loader(self.todos_comandos[1:])
+            self.loader.plus_dot_json()
+            self.loader.load_file()
+            self.loader.print_file()
         elif operation == 'seleccionar':
-            print('usted seleccionara un atributo de su archivo')
+            self.loader.print_select(self.todos_comandos[1:])
+            # loader.condition()
         elif operation == 'maximo':
             print('usted obtendra el maximo de un atributo')
         elif operation == 'minimo':
