@@ -36,22 +36,30 @@ class Loader:
         registro_json_numero = 0
         for registro_json in self.data_json:
             for person in registro_json['people']:
-                print("registro " + str(registro_dentro_archivo) + " " + person['nombre'], person['apellido'],
-                      person['edad'], person['estado'], sep=", ")
+                print("registro " + str(registro_dentro_archivo) + " ")
+                print(person['nombre'], person['apellido'], person['edad'], person['estado'], sep=", ")
                 registro_dentro_archivo += 1
             registro_json_numero += 1
 
     # este es el metodo para la condicion de
 
-    def condition(self):
-        contador = 0
-        for element in self.todos_comandos:
-            if element == 'DONDE':
-                print('la condicion es: ' + element)
-            else:
-                contador += 1
+    def condition(self, selection, campo_validador, condicion):
+        print(type(self.data_json[0]['people']))
+        registro_dentro_archivo = 1
+        registro_json_numero = 0
+        for registro_json in self.data_json:
+            for person in registro_json['people']:
+                for element in selection:
+                    if person[campo_validador] == condicion:
+                        print("registro " + str(registro_dentro_archivo))
+                        print(element + ": " + str(person[element]) + ", ", end=" ")
+                        print()
+                registro_dentro_archivo += 1
+
+            registro_json_numero += 1
 
     # imprimir la condicion
+
     def print_select(self, selection):
         print(type(self.data_json[0]['people']))
         registro_dentro_archivo = 1
@@ -66,3 +74,5 @@ class Loader:
             registro_json_numero += 1
 
 # todo preparar los metodos por si estan vacios y tambien por si el nombre del archivo es invalido
+# todo quitar que es un json siempre
+

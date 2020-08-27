@@ -9,6 +9,8 @@ while switch:
     analyzer.comando_original = ''
     comando_original = analyzer.separator()
     analyzer.selector_first_word(analyzer.todos_comandos[0])
-    analyzer.control()
+    # analyzer.control()
     if comando_original == 'exit':
         switch = False
+
+# todo hacer separadores para cada codigo
