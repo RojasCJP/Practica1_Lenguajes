@@ -63,7 +63,7 @@ class Analyzer:
                         elif type(self.todos_comandos[contador + 3]) == bool:
                             condicion = bool(self.todos_comandos[contador + 3])
                         else:
-                            condicion = int(self.todos_comandos[contador + 3])
+                            condicion = str(self.todos_comandos[contador + 3])
                         self.loader.condition(self.todos_comandos[1:contador], self.todos_comandos[contador + 1], condicion)
                         return
                     else:
