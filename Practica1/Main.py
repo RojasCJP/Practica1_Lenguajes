@@ -13,4 +13,3 @@ while switch:
     if comando_original == 'exit':
         switch = False
 
-# todo hacer separadores para cada codigo
