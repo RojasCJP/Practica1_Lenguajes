@@ -60,27 +60,33 @@ class Analyzer:
                     if element == 'donde':
                         if type(self.todos_comandos[contador + 3]) == int:
                             condicion = int(self.todos_comandos[contador + 3])
-                        elif type(self.todos_comandos[contador + 3]) == bool:
-                            condicion = bool(self.todos_comandos[contador + 3])
                         else:
-                            condicion = str(self.todos_comandos[contador + 3])
-                        self.loader.condition(self.todos_comandos[1:contador], self.todos_comandos[contador + 1], condicion)
+                            condicion = self.todos_comandos[contador + 3:]
+                            condicion_str = ''
+                            if len(condicion) >= 2:
+                                for elemento in condicion:
+                                    condicion_str += elemento + ' '
+                                condicion_str = condicion_str[0:-1]
+                            else:
+                                for elemento in condicion:
+                                    condicion_str += '' + elemento
+                        self.loader.condition(self.todos_comandos[1:contador], self.todos_comandos[contador + 1], condicion_str)
                         return
                     else:
                         contador += 1
                 self.loader.print_select(self.todos_comandos[1:])
-
-            # loader.condition()
         elif operation == 'maximo':
-            print('usted obtendra el maximo de un atributo')
+            self.loader.print_maximo(self.todos_comandos[1])
         elif operation == 'minimo':
-            print('usted obtendra el minimo de un atributo')
+            self.loader.print_minimo(self.todos_comandos[1])
         elif operation == 'suma':
-            print('usted sumara todos los valores de dicho atributo')
+            self.loader.print_total_suma(self.todos_comandos[1])
         elif operation == 'cuenta':
-            print('mostrara cuantos registros hay')
+            self.loader.print_cuenta()
         elif operation == 'reportar':
             print('aqui creara un reporte html')
+        elif operation == 'exit':
+            print('adios wapo')
         else:
             print('no escogio ningun comando')
 
