@@ -114,7 +114,7 @@ class Loader:
             cuenta += len(element)
         print(cuenta)
 
-# todo hacer condition
+#               todo hacer condition
 # todo hacer el reporte
 # todo preparar los metodos por si estan vacios y tambien por si el nombre del archivo es invalido
 # todo quitar que es un json siempre y hacer que no detecte mayusculas

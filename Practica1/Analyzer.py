@@ -59,7 +59,7 @@ class Analyzer:
                 for element in self.todos_comandos:
                     if element == 'donde':
                         if type(self.todos_comandos[contador + 3]) == int:
-                            condicion = int(self.todos_comandos[contador + 3])
+                            pass
                         else:
                             condicion = self.todos_comandos[contador + 3:]
                             condicion_str = ''
