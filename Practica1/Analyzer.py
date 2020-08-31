@@ -41,6 +41,11 @@ class Analyzer:
                 self.todos_comandos.append(comando[contador + 1:len(comando)])
             else:
                 self.todos_comandos.append(comando[contador + 1:(comando.find(' '))])
+        contador_minusculas = 0
+        for element in self.todos_comandos:
+            self.todos_comandos[contador_minusculas] = self.todos_comandos[contador_minusculas].casefold()
+            contador_minusculas += 1
+
         return comando_original
 
     # este metodo selecciona la primera palabra y con forme a eso esto hara cierta accion
@@ -57,30 +62,42 @@ class Analyzer:
             else:
                 contador = 0
                 for element in self.todos_comandos:
-                    if element == 'donde':
-                        if type(self.todos_comandos[contador + 3]) == int:
-                            pass
-                        else:
-                            condicion = self.todos_comandos[contador + 3:]
-                            condicion_str = ''
-                            if len(condicion) >= 2:
-                                for elemento in condicion:
-                                    condicion_str += elemento + ' '
-                                condicion_str = condicion_str[0:-1]
+                    try:
+                        if element == 'donde':
+                            if type(self.todos_comandos[contador + 3]) == int:
+                                pass
                             else:
-                                for elemento in condicion:
-                                    condicion_str += '' + elemento
-                        self.loader.condition(self.todos_comandos[1:contador], self.todos_comandos[contador + 1], condicion_str)
-                        return
+                                condicion = self.todos_comandos[contador + 3:]
+                                condicion_str = ''
+                                if len(condicion) >= 2:
+                                    for elemento in condicion:
+                                        condicion_str += elemento + ' '
+                                    condicion_str = condicion_str[0:-1]
+                                else:
+                                    for elemento in condicion:
+                                        condicion_str += '' + elemento
+                            self.loader.condition(self.todos_comandos[1:contador], self.todos_comandos[contador + 1], condicion_str)
+                            return
+                    except:
+                        print('Revise sus datos')
                     else:
                         contador += 1
                 self.loader.print_select(self.todos_comandos[1:])
         elif operation == 'maximo':
-            self.loader.print_maximo(self.todos_comandos[1])
+            if type(self.todos_comandos[1]) == int:
+                self.loader.print_maximo(self.todos_comandos[1])
+            else:
+                print('Estos valores no son numeros')
         elif operation == 'minimo':
-            self.loader.print_minimo(self.todos_comandos[1])
+            if type(self.todos_comandos[1]):
+                self.loader.print_minimo(self.todos_comandos[1])
+            else:
+                print('Estos valores no son numeros')
         elif operation == 'suma':
-            self.loader.print_total_suma(self.todos_comandos[1])
+            if type(self.todos_comandos[1]):
+                self.loader.print_total_suma(self.todos_comandos[1])
+            else:
+                print('Estos valores no son numeros')
         elif operation == 'cuenta':
             self.loader.print_cuenta()
         elif operation == 'reportar':

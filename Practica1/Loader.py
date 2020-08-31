@@ -1,5 +1,5 @@
 import json
-import sys
+import os
 
 
 class Loader:
@@ -16,7 +16,7 @@ class Loader:
     def plus_dot_json(self):
         contador_dot = 0
         for element in self.file_array:
-            self.file_array[contador_dot] = self.file_array[contador_dot] + '.json'
+            self.file_array[contador_dot] = self.file_array[contador_dot]
             contador_dot += 1
 
     # este metodo carga el/los archivos .json para el programa y los guarda en un arreglo llamado data_json
@@ -25,9 +25,12 @@ class Loader:
     def load_file(self):
         contador = 0
         for file in self.file_array:
-            with open(file) as f:
-                self.data_json.append(json.load(f))
-            contador += 1
+            if os.path.isfile(file):
+                with open(file) as f:
+                    self.data_json.append(json.load(f))
+                contador += 1
+            else:
+                print('el archivo que intenta agregar no existe')
 
     # este metodo ayuda a mostrar todos los registros cargados con el metodo anterior
 
@@ -37,7 +40,6 @@ class Loader:
         registro_json_numero = 0
         for registro_json in self.data_json:
             for element in registro_json:
-                print("registro " + str(registro_dentro_archivo) + " ")
                 print(element['nombre'], element['edad'], element['activo'], element['promedio'], sep=", ")
                 registro_dentro_archivo += 1
                 registro_json_numero += 1
@@ -45,17 +47,20 @@ class Loader:
     # este es el metodo para la condicion de
 
     def condition(self, selection, campo_validador, condicion):
-        print(type(self.data_json[0]))
-        registro_dentro_archivo = 1
-        registro_json_numero = 0
-        for registro_json in self.data_json:
-            for person in registro_json:
-                for element in selection:
-                    if (str(person[campo_validador])) == condicion:
-                        print(element + ": " + str(person[element]) + ", ", end=" ")
-                registro_dentro_archivo += 1
-            registro_json_numero += 1
-            print()
+        try:
+            print(type(self.data_json[0]))
+            registro_dentro_archivo = 1
+            registro_json_numero = 0
+            for registro_json in self.data_json:
+                for person in registro_json:
+                    for element in selection:
+                        if (str(person[campo_validador])) == condicion:
+                            print(element + ": " + str(person[element]) + ", ", end=" ")
+                    registro_dentro_archivo += 1
+                registro_json_numero += 1
+                print()
+        except:
+            print('El registro que usted solicito no se encuentra')
 
     # imprimir la condicion
 
@@ -64,12 +69,14 @@ class Loader:
         registro_dentro_archivo = 1
         registro_json_numero = 0
         for registro_json in self.data_json:
-            for person in registro_json:
-                print("registro " + str(registro_dentro_archivo))
-                for element in selection:
-                    print(element + ": " + str(person[element]) + ", ", end=" ")
-                registro_dentro_archivo += 1
-                print()
+            try:
+                for person in registro_json:
+                    for element in selection:
+                       print(element + ": " + str(person[element]) + ", ", end=" ")
+                    registro_dentro_archivo += 1
+                    print()
+            except:
+                print('El registro que pidio no se ecuentra')
             registro_json_numero += 1
 
     def print_minimo(self, selection):
@@ -114,7 +121,4 @@ class Loader:
             cuenta += len(element)
         print(cuenta)
 
-#               todo hacer condition
 # todo hacer el reporte
-# todo preparar los metodos por si estan vacios y tambien por si el nombre del archivo es invalido
-# todo quitar que es un json siempre y hacer que no detecte mayusculas
