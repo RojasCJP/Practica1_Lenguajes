@@ -1,5 +1,6 @@
 from Practica1.loader import Loader
 import re
+import os
 
 
 class Analyzer:
@@ -84,24 +85,28 @@ class Analyzer:
                         contador += 1
                 self.loader.print_select(self.todos_comandos[1:])
         elif operation == 'maximo':
-            if type(self.todos_comandos[1]) == int:
+            try:
                 self.loader.print_maximo(self.todos_comandos[1])
-            else:
+            except:
                 print('Estos valores no son numeros')
         elif operation == 'minimo':
-            if type(self.todos_comandos[1]):
+            try:
                 self.loader.print_minimo(self.todos_comandos[1])
-            else:
+            except:
                 print('Estos valores no son numeros')
         elif operation == 'suma':
-            if type(self.todos_comandos[1]):
+            try:
                 self.loader.print_total_suma(self.todos_comandos[1])
-            else:
+            except:
                 print('Estos valores no son numeros')
         elif operation == 'cuenta':
             self.loader.print_cuenta()
         elif operation == 'reportar':
-            print('aqui creara un reporte html')
+            # todo hacer el registro, creo que se puede hacer con plantilla
+            dirname = os.path.dirname(__file__)
+            dirname = re.sub('//Practica1', '', dirname)
+            filename = os.path.join(dirname, '../Registro.html')
+            os.system(filename)
         elif operation == 'exit':
             print('adios wapo')
         else:
