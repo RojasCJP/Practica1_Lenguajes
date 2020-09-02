@@ -13,21 +13,30 @@ Este es el listado de comandos:
 
 <p>Seleccionar: este comando nos permite seleccionar algun campo de nuestros archivos json o imprimirlos todos.</p>
 <p>-La sintaxis para este comando es: SELECCIONAR *  o  SELECCIONAR campo_en_archivo_json</p>
+<img src="https://github.com/RojasCJP/Practica1_Lenguajes/blob/master/Imagenes/seleccionar_todo.jpg">
+<img src="https://github.com/RojasCJP/Practica1_Lenguajes/blob/master/Imagenes/seleccionar.jpg">
 
 <p>Seleccionar-Donde: este comando nos permite seleccionar algun campo de nustros archivos json donde estos cumplan con una condicion dada.</p>
 <p>-La sintaxis para este comando es: SELECCIONAR campo_en_archivo_json DONDE campo_en_archivo_json = condicion</p>
+<img src="https://github.com/RojasCJP/Practica1_Lenguajes/blob/master/Imagenes/seleccionar_donde.jpg">
 
 <p>Maximo: este comando nos permite mostrar el mayor entre los atributos de nuestro archivo json siempre y cuando este atributo sea numerico.</p>
 <p>-La sintaxis para este comando es: MAXIMO campo_numerico_en_archivo_json</p>
+<img src="https://github.com/RojasCJP/Practica1_Lenguajes/blob/master/Imagenes/maximo.jpg">
 
 <p>Minimo: este comando nos permite mostrar el menor entre los atributos de nuestro archivo json siempre y cuando este atributo sea numerico.</p>
 <p>-La sintaxis para este comando es: MINIMO campo_numerico_en_archivo_json</p>
+<img src="https://github.com/RojasCJP/Practica1_Lenguajes/blob/master/Imagenes/minimo.jpg">
 
 <p>Suma: este comando nos permite mostrar la suma entre los atributos de una archivo json siempre y cuando este atributo sea numerico.</p>
 <p>-La sintaxis para este comando es: SUMA campo_numeroco_en_archivo_json</p>
+<img src="https://github.com/RojasCJP/Practica1_Lenguajes/blob/master/Imagenes/suma.jpg">
 
 <p>Cuenta: este comando nos permite mostrar la cantidad de registros json que hay en nustros archivos cargados, esta cuenta puede cambiar segun la cantidad de archivos json que esten cargados en nuestro programa.</p>
 <p>-La sintaxis para este comando es: CUENTA</p>
+<img src="https://github.com/RojasCJP/Practica1_Lenguajes/blob/master/Imagenes/cuenta.jpg">
 
 <p>Reportar: este comando nos permite crear una archivo html con la cantidad de registros que nosotros indiquemos, este los muestra en forma de una tabla.</p>
 <p>-La sintaxis para este comando es: REPORTAR n</p>
+<img src="https://github.com/RojasCJP/Practica1_Lenguajes/blob/master/Imagenes/reportar.jpg">
+<img src="https://github.com/RojasCJP/Practica1_Lenguajes/blob/master/Imagenes/reporte.jpg">
