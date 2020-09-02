@@ -1,6 +1,7 @@
-from Practica1.Loader import Loader
+from Loader import Loader
 import re
 import os
+
 
 class Analyzer:
     todos_comandos = []
@@ -9,7 +10,7 @@ class Analyzer:
 
     # constructor para analizador de comandos
 
-    def __init__(self, todos_comandos, comando_original):
+    def __init__ (self, todos_comandos, comando_original):
         self.todos_comandos = todos_comandos
         self.comando_original = comando_original
 
@@ -20,7 +21,7 @@ class Analyzer:
     # y para obtener el lugar de cada palabra utilizamos un contador este se utiliza unicamente para imprimir
     # las condiciones utilizadas son para poder guardar el ultimo digito
 
-    def separator(self):
+    def separator (self):
         print('----------------------------------------------------------------------------------------------------------')
         print('ingrese el comando respectivo')
         comando = input()
@@ -50,7 +51,7 @@ class Analyzer:
 
     # este metodo selecciona la primera palabra y con forme a eso esto hara cierta accion
 
-    def selector_first_word(self, operation):
+    def selector_first_word (self, operation):
         if operation == 'cargar':
             print('usted cargara el/los siguiente(s) archivo(s) json ' + str(self.todos_comandos[1:]))
             self.loader = Loader(self.todos_comandos[1:])
@@ -109,7 +110,7 @@ class Analyzer:
 
     # este metodo muestra todos los datos oportunos, como la matris de comandos y los comandos separados, ademas del mensaje original pero como queda al final
 
-    def control(self):
+    def control (self):
         print('los numeros anteriormente mostrados son los espacios en los que hay un espacio en el codigo original')
         print(self.comando_original)
         for element in self.todos_comandos:

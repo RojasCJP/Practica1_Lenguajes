@@ -1,5 +1,5 @@
-from Practica1.Analyzer import Analyzer
-from Practica1.reporte import Reporte
+from Analyzer import Analyzer
+from reporte import Reporte
 
 comando_para_guardar = ''
 todos_comandos = []
