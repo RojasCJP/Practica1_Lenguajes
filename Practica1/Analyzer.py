@@ -2,7 +2,6 @@ from Practica1.loader import Loader
 import re
 import os
 
-
 class Analyzer:
     todos_comandos = []
     comando_original = ''
@@ -102,11 +101,13 @@ class Analyzer:
         elif operation == 'cuenta':
             self.loader.print_cuenta()
         elif operation == 'reportar':
+            pass
             # todo hacer el registro, creo que se puede hacer con plantilla
-            dirname = os.path.dirname(__file__)
-            dirname = re.sub('//Practica1', '', dirname)
-            filename = os.path.join(dirname, '../Registro.html')
-            os.system(filename)
+            # dirname = os.path.dirname(__file__)
+            # dirname = re.sub('//Practica1', '', dirname)
+            # dirname = re.sub('//Practica1', '', dirname)
+            # filename = os.path.join(dirname, '../Reporte.html')
+            # os.system(filename)
         elif operation == 'exit':
             print('adios wapo')
         else:

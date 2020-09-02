@@ -1,5 +1,7 @@
 from Practica1.analyzer import Analyzer
+from Practica1.reporte import Reporte
 
+comando_para_guardar = ''
 todos_comandos = []
 comando_original = ''
 analyzer = Analyzer(todos_comandos, comando_original)
@@ -9,7 +11,20 @@ while switch:
     analyzer.comando_original = ''
     comando_original = analyzer.separator()
     analyzer.selector_first_word(analyzer.todos_comandos[0])
-    # analyzer.control()
+    for element in analyzer.todos_comandos:
+        comando_para_guardar += element + ' '
+        #     todo hay que guardar todos los comandos, concatenarlos y guardarlos despues
+    comando_para_guardar = ''
     if comando_original == 'exit':
         switch = False
-
+    elif analyzer.todos_comandos[0] == 'reportar':
+        # todo hacer el registro, creo que se puede hacer con plantilla
+        cuenta = 0
+        for element in analyzer.loader.data_json:
+            cuenta += len(element)
+        try:
+            int(analyzer.todos_comandos[1])
+            reporte = Reporte(int(analyzer.todos_comandos[1]), cuenta)
+            print(cuenta)
+        except:
+            print('el dato que ingreso no es un numero')
