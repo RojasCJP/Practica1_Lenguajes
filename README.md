@@ -1,6 +1,6 @@
 # PRACTICA UNICA LENGUAJES FORMALES Y DE PROGRAMACION 
 
-# MANUAL DE USUAIO
+# MANUAL DE USUARIO
 
 Lo primero que tenemos que entender es que es este programa.
 Este programa es una version simplificada de SQL el cual hace consultas en archivos .json.
