@@ -9,6 +9,7 @@ Este es el listado de comandos:
 
 <p>Cargar: el comando cargar introduce n archivos .json a la memoria para luego utilizarlos en el programa para hacer las consultas que el usuario desee.</p>
 <p>-La sintaxis para este comandos es: CARGAR archivo1.json, archivo2.json, ..., archivon.json</p>
+![alt text](https://github.com/RojasCJP/Practica1_Lenguajes/tree/master/Imagenes/cargar.jpg)
 
 <p>Seleccionar: este comando nos permite seleccionar algun campo de nuestros archivos json o imprimirlos todos.</p>
 <p>-La sintaxis para este comando es: SELECCIONAR *  o  SELECCIONAR campo_en_archivo_json</p>
