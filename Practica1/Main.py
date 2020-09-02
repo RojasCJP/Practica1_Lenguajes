@@ -23,8 +23,7 @@ while switch:
         for element in analyzer.loader.data_json:
             cuenta += len(element)
         try:
-            int(analyzer.todos_comandos[1])
-            reporte = Reporte(int(analyzer.todos_comandos[1]), cuenta)
-            print(cuenta)
+            numero_registros = int(comando_original[8:])
+            reporte = Reporte(numero_registros, cuenta, analyzer.loader.file_array)
         except:
             print('el dato que ingreso no es un numero')

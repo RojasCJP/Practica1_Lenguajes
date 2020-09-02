@@ -3,21 +3,31 @@ import os
 
 
 class Reporte:
-    def __init__(self, numero_registros, tamano_lista):
 
-        def reporte():
-            print('Metodo para hacer un reporte en html')
-            with open('json1.json') as file:
-                data = json.load(file)
+    def __init__ (self, numero_registros, tamano_lista, file_array):
+        self.file_array = file_array
+        self.todos_comandos = file_array
+        self.data_json = []
+
+        def reporte ():
+            contador = 0
+            for file in self.file_array:
+                if os.path.isfile(file):
+                    with open(file) as f:
+                        self.data_json.append(json.load(f))
+                    contador += 1
+            else:
+                pass
             nombre = []
             edad = []
             activo = []
             promedio = []
-            for registro in data:
-                nombre.append(registro['nombre'])
-                edad.append(registro['edad'])
-                activo.append(registro['activo'])
-                promedio.append(registro['promedio'])
+            for registro_json in self.data_json:
+                for registro in registro_json:
+                    nombre.append(registro['nombre'])
+                    edad.append(registro['edad'])
+                    activo.append(registro['activo'])
+                    promedio.append(registro['promedio'])
             if os.path.exists('Reporte.html') and os.path.exists('ReporteCss.css'):
                 if not os.path.isdir('Personas'):
                     os.mkdir('Personas')

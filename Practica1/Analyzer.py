@@ -102,12 +102,6 @@ class Analyzer:
             self.loader.print_cuenta()
         elif operation == 'reportar':
             pass
-            # todo hacer el registro, creo que se puede hacer con plantilla
-            # dirname = os.path.dirname(__file__)
-            # dirname = re.sub('//Practica1', '', dirname)
-            # dirname = re.sub('//Practica1', '', dirname)
-            # filename = os.path.join(dirname, '../Reporte.html')
-            # os.system(filename)
         elif operation == 'exit':
             print('adios wapo')
         else:
