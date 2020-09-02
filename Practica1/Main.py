@@ -1,4 +1,4 @@
-from Practica1.analyzer import Analyzer
+from Practica1.Analyzer import Analyzer
 from Practica1.reporte import Reporte
 
 comando_para_guardar = ''

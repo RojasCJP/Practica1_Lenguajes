@@ -1,4 +1,4 @@
-from Practica1.loader import Loader
+from Practica1.Loader import Loader
 import re
 import os
 
