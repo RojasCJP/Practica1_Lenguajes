@@ -26,4 +26,7 @@ while switch:
             numero_registros = int(comando_original[8:])
             reporte = Reporte(numero_registros, cuenta, analyzer.loader.file_array)
         except:
-            print('el dato que ingreso no es un numero')
+            if (comando_original[9:10]) == '*':
+                reporte = Reporte(cuenta, cuenta, analyzer.loader.file_array)
+            else:
+                print('el dato que ingreso no es un numero')
